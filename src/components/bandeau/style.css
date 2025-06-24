@@ -1,0 +1,53 @@
+/* Conteneur principal du bandeau */
+.bandeau-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  
+  /* Couleurs et Arrière-plan */
+  background-color: #f9fbfd;
+  color: #3b82f6;           
+ 
+  /* Espacement et Dimensions */
+  padding: 10px 0;           /* Augmenter légèrement le padding pour plus d'air */
+  box-sizing: border-box;
+  margin-bottom: 0;          /* Généralement pas de marge si c'est un header de page */
+  
+  /* Typographie */
+  font-weight: 600;          /* Un peu plus gras que "bold" pour un look moderne */
+  font-size: 1.2rem;         /* Augmenter légèrement la taille de la police */
+  line-height: 1.5;          /* Pour une meilleure lisibilité si le texte est long */
+  text-align: center;
+  
+  /* Ombre subtile pour le faire ressortir un peu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Élément contenant le texte qui va défiler */
+.bandeau-texte {
+  display: inline-block;
+  animation: defilement linear infinite;
+  animation-duration: 25s; /* Légèrement plus lent pour une meilleure lecture */
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  padding-left: 100%;
+  opacity: 0.8;
+  
+  /* Effet de transition pour la pause au survol */
+  transition: animation-play-state 0.3s ease-in-out;
+}
+
+/* Définition de l'animation de défilement */
+@keyframes defilement {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Effet : Met l'animation en pause lorsque la souris survole le bandeau */
+.bandeau-container:hover .bandeau-texte {
+  animation-play-state: paused;
+}
