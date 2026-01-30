@@ -1,17 +1,16 @@
 import React from 'react';
+import Hero from '../../components/Hero';
 import Skills from '../../components/skills';
 import Projects from '../../components/projects';
-import Services from '../../components/Services ';
-import Bandeau from '../../components/bandeau'
+import Contact from '../../components/Contact';
 
 const Home = () => {
   return (
     <div>
-      <Services/>
-      <Bandeau/>
+      <Hero />
       <Skills />
       <Projects />
-      
+      <Contact />
     </div>
   );
 };

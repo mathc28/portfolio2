@@ -1,99 +1,104 @@
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import Logo from "../../assets/logo-mc/ChatGPT Image 23 juin 2025 à 18_08_33.png";
+import React, { useState, useEffect } from "react";
 import "./style2.css";
+import { useLanguage } from "../../contexts/LanguageContext";
 
-const Hero = () => {
-  const titleRef = useRef(null);
-  const subtitleRef = useRef(null);
-  const illustrationRef = useRef(null);
-
-  const arrowRef = useRef(null);
-
-  const handleSlowScroll = (e) => {
-    e.preventDefault();
-    document.documentElement.style.scrollBehavior = "auto";
-    window.scrollTo({
-      top: document.querySelector("#services").offsetTop,
-      behavior: "smooth",
-    });
-    setTimeout(() => {
-      document.documentElement.style.scrollBehavior = "smooth";
-    }, 1000);
-  };
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(titleRef.current, {
-        duration: 1,
-        opacity: 0,
-        y: -50,
-        ease: "power2.out",
-      });
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
 
-      gsap.from(subtitleRef.current, {
-        duration: 1,
-        opacity: 0,
-        y: 50,
-        delay: 0.5,
-        ease: "power2.out",
-      });
-
-      gsap.from(illustrationRef.current, {
-        duration: 1.5,
-        opacity: 0,
-        x: 100,
-        rotate: 30,
-        delay: 0.5,
-        ease: "power2.out",
-      });
-
-      gsap.fromTo(
-        arrowRef.current,
-        { opacity: 0, y: -10 },
-        { opacity: 1, y: 10, repeat: -1, yoyo: true, duration: 1 }
-      );
-    });
-
-    return () => ctx.revert(); // nettoyage GSAP
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const navItems = [
+    { label: t.nav.skills, id: 'skills' },
+    { label: t.nav.projects, id: 'projects' },
+    { label: t.nav.contact, id: 'contact' },
+  ];
+
   return (
-    <section className="hero">
-      <nav className="nav">
-        <div ref={illustrationRef} className="hero-image"> 
-          <a href="#">
-            <img src={Logo} alt="Logo MC" className="hover-image" />
-          </a>
-        </div>
-        <ul className="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#skills">Compétences</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div className="hero-main">
-        <div className="hero-text">
-          <h1 ref={titleRef}>Développeur Web Freelance</h1>
-          <p ref={subtitleRef}>Créons ensemble des expériences web sur mesure.</p>
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container header-container">
+        <div className="header-logo">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+            <span className="logo-text">Portfolio</span>
+          </button>
         </div>
 
+        <nav className="header-nav">
+          <ul className="nav-links">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
+          <button
+            className="language-toggle"
+            onClick={toggleLanguage}
+            aria-label="Change language"
+          >
+            <span className="language-flag">{language === 'fr' ? '🇬🇧' : '🇫🇷'}</span>
+            <span className="language-text">{language === 'fr' ? 'EN' : 'FR'}</span>
+          </button>
+
+          <button
+            className="mobile-menu-btn"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
+        </nav>
       </div>
 
-      <a
-        ref={arrowRef}
-        className="scroll-arrow"
-        onClick={handleSlowScroll}
-        role="button"
-        aria-label="Aller vers Compétences"
-      >
-        &#x25BC;
-      </a>
-    </section>
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <ul>
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                }}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </header>
   );
 };
 
-export default Hero;
+export default Header;
