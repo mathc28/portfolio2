@@ -1,5 +1,5 @@
 // Importation des composants et des éléments nécessaires depuis React Router
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Accueil from "../Pages/home";
 
