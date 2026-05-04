@@ -1,5 +1,5 @@
 // Importation des différentes pages de l'application
-import Header from "./components/header/index2";
+import Header from "./components/header/index";
 import Footer from "./components/footer"
 import Router from "./router";
 import { LanguageProvider } from "./contexts/LanguageContext";

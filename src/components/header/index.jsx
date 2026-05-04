@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style2.css";
+import "./style.css";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 const Header = () => {
@@ -25,6 +25,7 @@ const Header = () => {
   };
 
   const navItems = [
+    { label: t.nav.about, id: 'about' },
     { label: t.nav.skills, id: 'skills' },
     { label: t.nav.projects, id: 'projects' },
     { label: t.nav.contact, id: 'contact' },

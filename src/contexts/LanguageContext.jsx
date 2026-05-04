@@ -14,9 +14,47 @@ export const translations = {
   fr: {
     // Header
     nav: {
+      about: 'À propos',
       skills: 'Compétences',
       projects: 'Projets',
       contact: 'Contact',
+    },
+
+    // About
+    about: {
+      title: 'À propos',
+      subtitle: 'Quelques mots sur mon parcours et ma façon de travailler',
+      badge: 'Disponible en freelance',
+      heading: 'Développeur web passionné par les interfaces qui marquent',
+      description1: 'Je m\'appelle Mathieu, développeur web front-end basé en France. Après une reconversion professionnelle, j\'ai suivi la formation OpenClassrooms et j\'ai rapidement développé une vraie appétence pour la création d\'interfaces modernes, accessibles et performantes.',
+      description2: 'Aujourd\'hui en freelance, j\'accompagne des clients de toute taille — des indépendants aux PME — dans la création et la refonte de leurs sites web, avec une attention particulière portée au design, au SEO et à l\'expérience utilisateur.',
+      location: 'France',
+      status: 'Freelance — disponible pour de nouveaux projets',
+      formation: 'Formation OpenClassrooms — Développeur Web',
+      cvButton: 'Télécharger mon CV',
+      contactButton: 'Me contacter',
+      values: [
+        {
+          icon: '🎯',
+          title: 'Rigueur',
+          description: 'Code propre, respect des délais et attention aux détails à chaque étape du projet.',
+        },
+        {
+          icon: '🚀',
+          title: 'Performance',
+          description: 'Sites rapides, bien référencés et optimisés pour tous les appareils.',
+        },
+        {
+          icon: '🤝',
+          title: 'Communication',
+          description: 'Un point de contact clair tout au long du projet, de la conception à la livraison.',
+        },
+        {
+          icon: '✨',
+          title: 'Créativité',
+          description: 'Des interfaces pensées pour l\'utilisateur, avec un vrai sens du design.',
+        },
+      ],
     },
 
     // Hero
@@ -107,9 +145,47 @@ export const translations = {
   en: {
     // Header
     nav: {
+      about: 'About',
       skills: 'Skills',
       projects: 'Projects',
       contact: 'Contact',
+    },
+
+    // About
+    about: {
+      title: 'About Me',
+      subtitle: 'A few words about my background and the way I work',
+      badge: 'Available for freelance',
+      heading: 'Web developer passionate about interfaces that make an impact',
+      description1: 'My name is Mathieu, a front-end web developer based in France. After a career change, I completed the OpenClassrooms program and quickly developed a real passion for building modern, accessible, and performant interfaces.',
+      description2: 'Now working as a freelancer, I help clients of all sizes — from solo entrepreneurs to SMBs — create and redesign their websites, with a strong focus on design, SEO, and user experience.',
+      location: 'France',
+      status: 'Freelance — available for new projects',
+      formation: 'OpenClassrooms — Web Developer Program',
+      cvButton: 'Download my CV',
+      contactButton: 'Contact me',
+      values: [
+        {
+          icon: '🎯',
+          title: 'Precision',
+          description: 'Clean code, deadlines respected, and attention to detail at every step.',
+        },
+        {
+          icon: '🚀',
+          title: 'Performance',
+          description: 'Fast, SEO-friendly sites optimised for every device.',
+        },
+        {
+          icon: '🤝',
+          title: 'Communication',
+          description: 'A clear point of contact throughout the project, from design to delivery.',
+        },
+        {
+          icon: '✨',
+          title: 'Creativity',
+          description: 'Interfaces designed with the user in mind, with a genuine sense of design.',
+        },
+      ],
     },
 
     // Hero

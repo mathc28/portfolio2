@@ -35,18 +35,13 @@ const Footer = () => {
               <h4>{t.footer.social}</h4>
               <ul>
                 <li>
-                  <a href="https://github.com/votreprofil" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/mathc28" target="_blank" rel="noopener noreferrer">
                     GitHub
                   </a>
                 </li>
                 <li>
-                  <a href="https://linkedin.com/in/votreprofil" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/mathieu-cocu-b159625b/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:votre.email@example.com">
-                    Email
                   </a>
                 </li>
               </ul>

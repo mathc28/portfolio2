@@ -33,9 +33,9 @@ const Contact = () => {
     // Configuration EmailJS - À REMPLACER PAR VOS PROPRES IDENTIFIANTS
     // Créez un compte sur https://www.emailjs.com/
     // Puis remplacez ces valeurs par les vôtres
-    const SERVICE_ID = 'YOUR_SERVICE_ID';
-    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
-    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+    const SERVICE_ID = 'service_g1c91pb';
+    const TEMPLATE_ID = 'template_8r174vg';
+    const PUBLIC_KEY = 'uJvYxBHUCH9pBhh6W';
 
     try {
       const result = await emailjs.sendForm(
@@ -82,13 +82,13 @@ const Contact = () => {
             <div className="info-card">
               <div className="info-icon">📧</div>
               <h3>{t.contact.info.email}</h3>
-              <a href="mailto:votre.email@example.com">votre.email@example.com</a>
+              <a href="mailto:cocumathieu@gmail.com">cocumathieu@gmail.com</a>
             </div>
 
             <div className="info-card">
               <div className="info-icon">💼</div>
               <h3>{t.contact.info.linkedin}</h3>
-              <a href="https://linkedin.com/in/votreprofil" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/mathieu-cocu-b159625b/" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
             </div>
@@ -96,7 +96,7 @@ const Contact = () => {
             <div className="info-card">
               <div className="info-icon">🐙</div>
               <h3>{t.contact.info.github}</h3>
-              <a href="https://github.com/votreprofil" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/mathc28" target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>
             </div>
