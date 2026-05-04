@@ -15,8 +15,27 @@ import PhotoPrint from "../../assets/photo-projets/projet-4.webp";
 import PhotoOhmyfood from "../../assets/photo-projets/projet-3.webp";
 import PhotoBooki from "../../assets/photo-projets/projet-2.webp";
 import PhotoRc from "../../assets/photo-projets/projet-1.webp";
+import PhotoFdj from "../../assets/photo-projets/projet-fdj.png";
+import PhotoArb from "../../assets/photo-projets/arbauvergne.png";
+
 
 const allProjects = [
+    {
+      title: "Arbauvergne",
+      minidescription:"Site pour un élageur auvergnat",
+      description: "Création d'un site pour un élagueur professionnel auvergnat. Site vitrine avec stratégie SEO pour les lus grandes villes auvergnates.",
+      image: PhotoArb,
+      link: "https://www.arbauvergne.fr",
+      technologies: ["Wordpress", "PHP", "CSS"],
+    }, 
+    {
+      title: "Foot Du Jour",
+      minidescription:"site dédié au news football",
+      description: "Refonte visuelle pour le site d'un ami avec du contenu spécial football. Le but est d'avoir les dernières news football de manière lisisble sans trop .",
+      image: PhotoFdj,
+      link: "https://www.footdujour.fr",
+      technologies: ["React", "CSS", "Javascript"],
+    }, 
     {
       title: "Portfolio",
       minidescription:"Mon portfolio personnel",
