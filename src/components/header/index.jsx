@@ -1,6 +1,9 @@
+'use client';
+
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import { useLanguage } from "../../contexts/LanguageContext";
+import logoMC from "../../assets/logo-mc/logomcnoir.png"
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,7 +39,7 @@ const Header = () => {
       <div className="container header-container">
         <div className="header-logo">
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
-            <span className="logo-text">Portfolio</span>
+            <img src={logoMC.src} alt="logo MC Dev" />
           </button>
         </div>
 

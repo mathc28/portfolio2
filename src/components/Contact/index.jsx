@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './style.css';
@@ -78,36 +80,6 @@ const Contact = () => {
         </div>
 
         <div className="contact-content">
-          <div className="contact-info">
-            <div className="info-card">
-              <div className="info-icon">📧</div>
-              <h3>{t.contact.info.email}</h3>
-              <a href="mailto:cocumathieu@gmail.com">cocumathieu@gmail.com</a>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">💼</div>
-              <h3>{t.contact.info.linkedin}</h3>
-              <a href="https://www.linkedin.com/in/mathieu-cocu-b159625b/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">🐙</div>
-              <h3>{t.contact.info.github}</h3>
-              <a href="https://github.com/mathc28" target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-            </div>
-
-            <div className="info-card">
-              <div className="info-icon">📍</div>
-              <h3>{t.contact.info.location}</h3>
-              <p>{t.contact.info.locationValue}</p>
-            </div>
-          </div>
-
           <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
               <label htmlFor="from_name">{t.contact.form.name}</label>

@@ -1,7 +1,9 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './style.css';
-import heroImage from '../../assets/home.png';
+import heroImage from "../../assets/home.png";
 import { useLanguage } from '../../contexts/LanguageContext';
 
 const Hero = () => {
@@ -16,13 +18,7 @@ const Hero = () => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       // Animate hero content
-      tl.from('.hero-badge', {
-        scale: 0,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'back.out(1.7)',
-      })
-        .from('.hero-name', {
+      tl.from('.hero-name', {
           y: 80,
           opacity: 0,
           duration: 1,
@@ -105,10 +101,6 @@ const Hero = () => {
 
       <div className="container hero-container">
         <div className="hero-content" ref={contentRef}>
-          <div className="hero-badge">
-            <span className="badge-icon">👋</span>
-            <span className="badge-text">{t.hero.badge}</span>
-          </div>
 
           <h1 className="hero-name">
             {t.hero.title}
@@ -132,35 +124,11 @@ const Hero = () => {
               <span>{t.hero.ctaSecondary}</span>
             </button>
           </div>
-
-          <div className="hero-stats">
-            <div className="hero-stats-card">
-              <div className="stats-icon">🚀</div>
-              <div className="stats-content">
-                <span className="stat-number">14+</span>
-                <span className="stat-label">{t.hero.stats.projects}</span>
-              </div>
-            </div>
-            <div className="hero-stats-card">
-              <div className="stats-icon">💼</div>
-              <div className="stats-content">
-                <span className="stat-number">3+</span>
-                <span className="stat-label">{t.hero.stats.experience}</span>
-              </div>
-            </div>
-            <div className="hero-stats-card">
-              <div className="stats-icon">⭐</div>
-              <div className="stats-content">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">{t.hero.stats.satisfaction}</span>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="hero-image-wrapper" ref={imageRef}>
           <div className="hero-image-bg"></div>
-          <img src={heroImage} alt="Developer workspace" className="hero-image" />
+          <img src={heroImage.src} alt="Developer workspace" className="hero-image" />
           <div className="hero-image-decoration decoration-1"></div>
           <div className="hero-image-decoration decoration-2"></div>
         </div>

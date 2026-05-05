@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import './style.css';
 import { useLanguage } from '../../contexts/LanguageContext';

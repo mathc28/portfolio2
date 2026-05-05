@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect, useRef } from "react";
 import "./style.css";
 import { useLanguage } from "../../contexts/LanguageContext";
@@ -222,7 +224,7 @@ const Projects = () => {
             ref={index === visibleCount - 1 ? lastCardRef : null}
           >
             <div className="project-image-wrapper">
-              <img src={project.image} alt={project.title} />
+              <img src={project.image.src} alt={project.title} />
               <div className="project-overlay">
                 <button
                   className="view-project-btn"
@@ -259,7 +261,7 @@ const Projects = () => {
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setSelectedProject(null)} aria-label={t.projects.close}>×</button>
             <h2>{selectedProject.title}</h2>
-            <img src={selectedProject.image} alt={selectedProject.title} className="modal-image" />
+            <img src={selectedProject.image.src} alt={selectedProject.title} className="modal-image" />
             <p>{selectedProject.description}</p>
             {selectedProject.technologies && (
               <div className="tech-stack">
